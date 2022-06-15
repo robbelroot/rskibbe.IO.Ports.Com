@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<PackageId>rskibbe.IO.Ports.Com</PackageId>
+	<Version>1.0.0</Version>
+	<Authors>Robert Skibbe</Authors>
+	<Company>Robert Skibbe</Company>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageReadmeFile>readme.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<None Include="docs/readme.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
