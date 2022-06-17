@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rskibbe.IO.Ports.Com", "rskibbe.IO.Ports.Com\rskibbe.IO.Ports.Com.csproj", "{AE37891E-E90B-4E9A-9952-C8465F5E9B62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rskibbe.IO.Ports.Com.Tests", "rskibbe.IO.Ports.Com.Tests\rskibbe.IO.Ports.Com.Tests.csproj", "{7C4D1DEE-24AD-4D04-80A5-F5BA7200238C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AE37891E-E90B-4E9A-9952-C8465F5E9B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE37891E-E90B-4E9A-9952-C8465F5E9B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE37891E-E90B-4E9A-9952-C8465F5E9B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C4D1DEE-24AD-4D04-80A5-F5BA7200238C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4D1DEE-24AD-4D04-80A5-F5BA7200238C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4D1DEE-24AD-4D04-80A5-F5BA7200238C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4D1DEE-24AD-4D04-80A5-F5BA7200238C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
