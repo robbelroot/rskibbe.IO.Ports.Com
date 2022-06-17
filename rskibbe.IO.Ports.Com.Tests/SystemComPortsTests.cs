@@ -7,54 +7,54 @@ namespace rskibbe.IO.Ports.Com.Tests;
 public class ComPortsTests
 {
 
-    protected ComPorts comPorts;
+    protected SystemComPorts systemComPorts;
 
     [SetUp]
     public void Setup()
     {
-        comPorts = new ComPorts();
+        systemComPorts = new SystemComPorts();
     }
 
     [Test]
     public async Task TestOneEventAsyncWithInserted()
     {
-        await comPorts.OneEventAsync(ComWatcherEventType.Inserted);
+        await systemComPorts.OneEventAsync(ComWatcherEventType.Inserted);
     }
 
     [Test]
     public async Task TestOneEventAsyncWithRemoved()
     {
-        await comPorts.OneEventAsync(ComWatcherEventType.Removed);
+        await systemComPorts.OneEventAsync(ComWatcherEventType.Removed);
     }
 
     [Test]
     public async Task TestOneEventAsyncWithAnyButInserted()
     {
-        await comPorts.OneEventAsync(ComWatcherEventType.Any);
+        await systemComPorts.OneEventAsync(ComWatcherEventType.Any);
     }
 
     [Test]
     public async Task TestOneEventAsyncWithAnyButRemoved()
     {
-        await comPorts.OneEventAsync(ComWatcherEventType.Any);
+        await systemComPorts.OneEventAsync(ComWatcherEventType.Any);
     }
 
     [Test]
     public async Task TestOnePortEventByNameWithInsert()
     {
-        await comPorts.OnePortEventByNameAsync("COM4", ComWatcherEventType.Inserted);
+        await systemComPorts.OnePortEventByNameAsync("COM4", ComWatcherEventType.Inserted);
     }
 
     [Test]
     public async Task TestOnePortEventByNameWithRemove()
     {
-        await comPorts.OnePortEventByNameAsync("COM4", ComWatcherEventType.Removed);
+        await systemComPorts.OnePortEventByNameAsync("COM4", ComWatcherEventType.Removed);
     }
 
     [Test]
     public async Task TestOnePortEventByNameWithAny()
     {
-        await comPorts.OnePortEventByNameAsync("COM4", ComWatcherEventType.Any);
+        await systemComPorts.OnePortEventByNameAsync("COM4", ComWatcherEventType.Any);
     }
 
 }

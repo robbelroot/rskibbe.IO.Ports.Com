@@ -6,7 +6,7 @@ using System.Management;
 
 namespace rskibbe.IO.Ports.Com.Monitoring
 {
-    public class ComPorts
+    public class SystemComPorts
     {
         const string QUERY = "SELECT * FROM __InstanceOperationEvent WITHIN 1 WHERE TargetInstance ISA 'Win32_SerialPort'";
 
@@ -22,7 +22,7 @@ namespace rskibbe.IO.Ports.Com.Monitoring
 
         public bool StopRequested { get; protected set; }
 
-        public ComPorts()
+        public SystemComPorts()
         {
             ExistingPorts = new List<string>();
             InitializeWatcher();
