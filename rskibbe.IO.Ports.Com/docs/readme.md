@@ -1,5 +1,5 @@
 ﻿# Description
-An infrastructure package representing the base for virtual COM port registrations. Is used in for example rskibbe.IO.Ports.Com.Com0Com, which is an example implementation. Keep in mind, that virtual COM ports are always created as pairs, because a connection always consists of two endpoints.
+COM port infrastructure package like events, notifications & more.
 
 # Getting started
 After Installation, just go ahead and import the corresponding namespace:

@@ -5,8 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<PackageId>rskibbe.IO.Ports.Com</PackageId>
-	<Description>An infrastructure package representing the base for virtual COM port registrations.</Description>
-	<Version>1.0.1</Version>
+	<Description>COM port infrastructure package like events, notifications &amp; more.</Description>
+	<Version>1.0.2</Version>
 	<Authors>Robert Skibbe</Authors>
 	<Company>Robert Skibbe</Company>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
