@@ -16,7 +16,7 @@ public abstract class VirtualComPortsBase : IVirtualComPorts
 
     public abstract Task RemoveVirtualPortsAsync(string portNameAOrB);
 
-    public abstract Task RemoveVirtualPortsAsync(int portIdAOrB);
+    public abstract Task RemoveVirtualPortsAsync(byte portIdAOrB);
 
     public abstract Task RemoveAllVirtualPortsAsync();
 

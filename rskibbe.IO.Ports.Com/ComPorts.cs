@@ -104,7 +104,7 @@ public class ComPorts : IComPorts
     public Task RemoveVirtualPortsAsync(string portNameAOrB)
         => _virtualComPorts.RemoveVirtualPortsAsync(portNameAOrB);
 
-    public Task RemoveVirtualPortsAsync(int portIdAOrB)
+    public Task RemoveVirtualPortsAsync(byte portIdAOrB)
         => _virtualComPorts.RemoveVirtualPortsAsync(portIdAOrB);
 
     public Task RemoveAllVirtualPortsAsync()

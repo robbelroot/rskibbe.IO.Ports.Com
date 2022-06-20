@@ -9,7 +9,7 @@ public interface IVirtualComPorts : IVirtualComPortEvents
 
     Task RemoveVirtualPortsAsync(string portNameAOrB);
 
-    Task RemoveVirtualPortsAsync(int portIdAOrB);
+    Task RemoveVirtualPortsAsync(byte portIdAOrB);
 
     Task RemoveAllVirtualPortsAsync();
 
