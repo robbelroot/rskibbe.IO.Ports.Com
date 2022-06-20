@@ -5,8 +5,8 @@ namespace rskibbe.IO.Ports.Com.Virtual;
 public interface IVirtualComPortEvents
 {
 
-    public event EventHandler<VirtualComPortsEventArgs> VirtualComPortsAdded;
+    event EventHandler<VirtualComPortsEventArgs>? VirtualComPortsAdded;
 
-    public event EventHandler<VirtualComPortsEventArgs> VirtualComPortsRemoved;
+    event EventHandler<VirtualComPortsEventArgs>? VirtualComPortsRemoved;
 
 }

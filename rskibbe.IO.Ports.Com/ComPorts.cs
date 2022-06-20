@@ -192,15 +192,15 @@ public class ComPorts : IComPorts
         PortRemoved?.Invoke(this, e);
     }
 
-    public event EventHandler<ComPortEventArgs> SystemComPortAdded;
+    public event EventHandler<ComPortEventArgs>? SystemComPortAdded;
 
-    public event EventHandler<ComPortEventArgs> SystemComPortRemoved;
+    public event EventHandler<ComPortEventArgs>? SystemComPortRemoved;
 
-    public event EventHandler<VirtualComPortsEventArgs> VirtualComPortsAdded;
+    public event EventHandler<VirtualComPortsEventArgs>? VirtualComPortsAdded;
 
-    public event EventHandler<VirtualComPortsEventArgs> VirtualComPortsRemoved;
+    public event EventHandler<VirtualComPortsEventArgs>? VirtualComPortsRemoved;
 
-    public event EventHandler<ComPortEventArgs> PortAdded;
+    public event EventHandler<ComPortEventArgs>? PortAdded;
 
-    public event EventHandler<ComPortEventArgs> PortRemoved;
+    public event EventHandler<ComPortEventArgs>? PortRemoved;
 }
