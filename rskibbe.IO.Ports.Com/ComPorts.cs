@@ -11,10 +11,13 @@ public class ComPorts : IComPorts
 
     protected IVirtualComPorts _virtualComPorts { get; }
 
+    public List<string> ExistingPorts { get; protected set; }
+
     public ComPorts(ISystemComPorts systemComPorts, IVirtualComPorts virtualComPorts)
     {
         _systemComPorts = systemComPorts;
         _virtualComPorts = virtualComPorts;
+        ExistingPorts = new();
         AttachHandlers();
     }
 
@@ -184,11 +187,15 @@ public class ComPorts : IComPorts
 
     protected virtual void OnPortAdded(ComPortEventArgs e)
     {
+        if (!ExistingPorts.Contains(e.PortName))
+            ExistingPorts.Add(e.PortName);
         PortAdded?.Invoke(this, e);
     }
 
     protected virtual void OnPortRemoved(ComPortEventArgs e)
     {
+        if (ExistingPorts.Contains(e.PortName))
+            ExistingPorts.Remove(e.PortName);
         PortRemoved?.Invoke(this, e);
     }
 
