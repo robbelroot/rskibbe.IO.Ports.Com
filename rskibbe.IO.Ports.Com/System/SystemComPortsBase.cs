@@ -16,6 +16,12 @@ public abstract class SystemComPortsBase : ISystemComPorts
         ExistingPorts = new List<string>();
     }
 
+    protected virtual void OnSystemComPortAdded(ComPortEventArgs e)
+        => SystemComPortAdded?.Invoke(this, e);
+
+    protected virtual void OnSystemComPortRemoved(ComPortEventArgs e)
+        => SystemComPortRemoved?.Invoke(this, e);
+
     public event EventHandler<ComPortEventArgs>? SystemComPortAdded;
 
     public event EventHandler<ComPortEventArgs>? SystemComPortRemoved;
