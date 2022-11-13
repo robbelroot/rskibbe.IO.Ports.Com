@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
 	<PackageId>rskibbe.IO.Ports.Com</PackageId>
 	<Description>COM port infrastructure package like events, notifications &amp; more.</Description>
-	<Version>1.0.4</Version>
+	<Version>1.0.5</Version>
 	<Authors>Robert Skibbe</Authors>
 	<Company>Robert Skibbe</Company>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>

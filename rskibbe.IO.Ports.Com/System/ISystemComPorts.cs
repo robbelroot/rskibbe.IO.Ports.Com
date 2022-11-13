@@ -1,6 +1,4 @@
-﻿using rskibbe.IO.Ports.Com.ValueObjects;
-
-namespace rskibbe.IO.Ports.Com.System;
+﻿namespace rskibbe.IO.Ports.Com.System;
 
 public interface ISystemComPorts : ISystemComPortEvents
 {
@@ -10,9 +8,5 @@ public interface ISystemComPorts : ISystemComPortEvents
     Task<IEnumerable<byte>> ListUsedPortIdsAsync();
 
     Task<IEnumerable<string>> ListUsedPortNamesAsync();
-
-    event EventHandler<ComPortEventArgs>? SystemComPortAdded;
-
-    event EventHandler<ComPortEventArgs>? SystemComPortRemoved;
 
 }
