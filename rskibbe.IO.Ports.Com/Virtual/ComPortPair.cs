@@ -1,55 +1,88 @@
-﻿namespace rskibbe.IO.Ports.Com.Virtual
+﻿namespace rskibbe.IO.Ports.Com.Virtual;
+
+/// <summary>
+/// Simple structure representing a COMA <> COMB pair
+/// </summary>
+public struct VirtualComPortPair
 {
-    /// <summary>
-    /// Simple structure representing a COMA <> COMB pair
-    /// </summary>
-    public struct VirtualComPortPair
+
+    string _nameA;
+
+    public string NameA
     {
-
-        public string NameA { get; set; }
-
-        public byte IdA
+        get => _nameA;
+        set
         {
-            get
-            {
-                NameA.ExtractByte(out var idA);
-                return idA;
-            }
+            if (_nameA == value)
+                return;
+            _nameA = value;
+            RefreshIdA();
         }
-
-        public string NameB { get; set; }
-
-        public byte IdB
-        {
-            get
-            {
-                NameB.ExtractByte(out var idB);
-                return idB;
-            }
-        }
-
-        public bool IsComplete => !string.IsNullOrWhiteSpace(NameA) && !string.IsNullOrWhiteSpace(NameB);
-
-        public VirtualComPortPair()
-        {
-            NameA = string.Empty;
-            NameB = string.Empty;
-        }
-
-        public VirtualComPortPair(string nameA, string nameB)
-        {
-            NameA = nameA;
-            NameB = nameB;
-        }
-
-        public byte[] ToIdArray()
-            => new byte[] { IdA, IdB };
-
-        public string[] ToNameArray()
-            => new string[] { NameA, NameB };
-
-        public override string ToString()
-            => $"{NameA}<>{NameB}";
-
     }
+
+    byte _idA;
+
+    public byte IdA => _idA;
+
+    string _nameB;
+
+    public string NameB
+    {
+        get => _nameB;
+        set
+        {
+            if (_nameB == value)
+                return;
+            _nameB = value;
+            RefreshIdB();
+        }
+    }
+
+    byte _idB;
+
+    public byte IdB => _idB;
+
+    public bool IsComplete => !string.IsNullOrWhiteSpace(NameA) && !string.IsNullOrWhiteSpace(NameB);
+
+    public VirtualComPortPair()
+    {
+        _nameA = string.Empty;
+        _idA = 0;
+        _nameB = string.Empty;
+        _idB = 0;
+    }
+
+    public VirtualComPortPair(string nameA, string nameB) : this()
+    {
+        _nameA = nameA;
+        _nameB = nameB;
+        RefreshIdA();
+        RefreshIdB();
+    }
+
+    private void RefreshIdA()
+    {
+        if (_nameA.ExtractByte(out var id))
+            _idA = id;
+        else
+            _idA = 0;
+    }
+
+    private void RefreshIdB()
+    {
+        if (_nameB.ExtractByte(out var id))
+            _idB = id;
+        else
+            _idB = 0;
+    }
+
+    public byte[] ToIdArray()
+        => new byte[] { IdA, IdB };
+
+    public string[] ToNameArray()
+        => new string[] { NameA, NameB };
+
+    public override string ToString()
+        => $"{NameA}<>{NameB}";
+
 }

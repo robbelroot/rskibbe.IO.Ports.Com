@@ -30,7 +30,7 @@ public class ComPorts : IComPorts
         var tcs = new TaskCompletionSource();
         void handler(object? sender, ComPortEventArgs e)
         {
-            if (e.PortName == portName)
+            if (e.PortName.ToLower() == portName.ToLower())
             {
                 tcs.SetResult();
                 PortAdded -= handler;
@@ -187,15 +187,17 @@ public class ComPorts : IComPorts
 
     protected virtual void OnPortAdded(ComPortEventArgs e)
     {
-        if (!ExistingPorts.Contains(e.PortName))
-            ExistingPorts.Add(e.PortName);
+        if (ExistingPorts.Contains(e.PortName))
+            return;
+        ExistingPorts.Add(e.PortName);
         PortAdded?.Invoke(this, e);
     }
 
     protected virtual void OnPortRemoved(ComPortEventArgs e)
     {
-        if (ExistingPorts.Contains(e.PortName))
-            ExistingPorts.Remove(e.PortName);
+        if (!ExistingPorts.Contains(e.PortName))
+            return;
+        ExistingPorts.Remove(e.PortName);
         PortRemoved?.Invoke(this, e);
     }
 

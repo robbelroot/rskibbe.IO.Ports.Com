@@ -3,8 +3,8 @@
 public interface IComPortEvents
 {
 
-    public event EventHandler PortAdded;
+    event EventHandler PortAdded;
 
-    public event EventHandler PortRemoved;
+    event EventHandler PortRemoved;
 
 }
